@@ -4,57 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>juego de la vida jorge grupo beta
 
     </title>
 </head>
 <body>
     <style>
-        td{
-            border: 1px solid black;
-        }
    
-        .central{
-        display: flex;
-        justify-content: center;
-        }
-  
-        .centraltex{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            }
-        .centraltex > p{
-           border: 1px solid black ;
-           width: 30%;
-           -webkit-border-radius: 2px;
-            border-radius: 2px;
-            height: 50px;
-            padding: 0px;
-            margin: 0px;
-            background-color: rgb(255, 187, 0);
-
-        }
-        #arriba{
-            margin-top: 20px;
-        }
 
 
     </style>
    
     <div id="contenedor-tablero"  class="central">
-
+        
     </div>
+    <a id="boton-portafolio" href="https://portafoliosapps.herokuapp.com/index"><p>volver al portafolios</p></a>
 
     <div class="centraltex">
-        <p id="arriba"><strong>espacio</strong> para pausar  y reproducir la animacion</p>
-        <p><strong>Backspace</strong> para para limpiar el tablero</p>
-        <p><strong>flecha derecha</strong> para avanzar fotograma por fotograma</p>
-        <p><strong>A</strong>  para generar un tablero aleatorio</p>
+    
+        <a onclick="intercambiarReproducción()"><p id="arriba"><strong>espacio</strong> para pausar  y reproducir la animacion</p></a>
+        <a onclick="limpiar()"><p><strong>Backspace</strong> para para limpiar el tablero</p></a>
+        <a onclick="siguienteEstado()"><p><strong>flecha derecha</strong> para avanzar fotograma por fotograma</p></a>
+        <a onclick="randomizar()"><p><strong>A</strong>  para generar un tablero aleatorio</p></a>
 
     </div>
+    
 
 
     <script>
@@ -65,6 +40,9 @@
         let reproducir = false
 
         let fotografia = []
+
+
+        
 
         document.addEventListener("keydown", (e) => { //Para tener un control con el teclado
             e.preventDefault() //Para evitar el movimiento del scroll
@@ -132,10 +110,10 @@
             mapa_complejidad = []
             reproducir = !reproducir
             if (reproducir) {
-                document.body.style.background = "white"
+   
                 document.getElementById("btn1").innerHTML = `<i class="fas fa-pause"></i>`
             } else {
-                document.body.style.background = "#f0f0ff"
+            
                 document.getElementById("btn1").innerHTML = `<i class="fas fa-play"></i>`
             }
         }
