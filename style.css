@@ -16,20 +16,21 @@ body{
 }
 
 .centraltex{
-    padding-top: 100px;
+    padding-top: 103px;
     padding-bottom: 100px;
     display: flex;
     flex-direction:row;
     justify-content: center;
     align-items: center;
     align-content: center;
+   
     }
 .centraltex > a {
  
    width: 25%;
    -webkit-border-radius: 2px;
    
-    height: 50px;
+    
     padding: 0px;
     margin: 0px;
     color: white;
@@ -53,6 +54,7 @@ body{
 }
 .centraltex > a > p {
     cursor: context-menu;
+    
 }
 
 #boton-portafolio > p{
@@ -82,3 +84,26 @@ backdrop-filter: blur( 12.5px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
+@media screen and (max-width: 480px){
+    #boton-portafolio > p{
+      
+       
+        position: relative;
+        top: 50%;
+      
+
+      
+    }
+    .centraltex{
+        padding-top: 0px;
+        padding-bottom: 100px;
+        display: flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+       
+        }
+    
+  }
